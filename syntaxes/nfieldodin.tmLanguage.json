@@ -1,0 +1,87 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "nfieldodin",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#codes"
+		},
+		{
+			"include": "#positions"
+		},
+		{
+			"include": "#questions"
+		},
+		{
+			"include": "#questionnumbers"
+		},
+		{
+			"include": "#functions"
+		}
+		
+	],
+	"repository": {
+		"comments": {
+			"patterns": [{
+				"match": "\\*{2}.*",
+				"name": "comment.control.nfieldodin"
+			}]
+		},
+		"functions": {
+			"patterns": [{
+				"match": "(STRFINDMATCH|STRHASMATCH|STRINDEX|STRLENGTH|STRLOWER|STRSUBSTR|STRTRIM|STRUPPER|TO)",
+				"name": "constant.language.nfieldodin"
+			}]
+		},
+		"positions": {
+			"patterns": [{
+				"match": "\\d+L\\d+",
+				"name": "entity.name.class.nfieldodin"
+			}]
+		},
+		"questions": {
+			"patterns": [{
+				"match": "(Q\\d+)",
+				"name": "entity.name.function.nfieldodin"
+			}]
+		},
+		"keywords": {		
+			"patterns": [{
+				"name": "keyword.control.nfieldodin",
+				"match": "(\\*[\\w|\\?]+)|(\\?R)"
+			}]
+		},
+		"codes": {		
+			"patterns": [{
+				"name": "constant.numeric.control.nfieldodin",
+				"match": "^\\s*\\d+\\s*(?=:)"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.nfieldodin",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.nfieldodin",
+					"match": "\\\\."
+				}
+			]
+		},
+		"questionnumbers": {
+			"patterns": [{
+				"match": "(?<=QUESTION )\\d+",
+				"name": "variable.parameter.nfieldodin"
+			}]
+		}
+	},
+	"scopeName": "source.nfieldodin"
+}

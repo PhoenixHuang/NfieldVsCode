@@ -1,0 +1,60 @@
+{
+  "QuestionSingle": {
+    "prefix": "QS",
+    "body": ["*QUESTION ${1:qNumber} *CODE L${2:qlength} *VAR \"${3:varName}\""],
+    "description": "SingleQuestion"
+  },
+  "QuestionMulti": {    
+    "prefix": "QM",
+    "body": ["*QUESTION ${1:qNumber} *CODE *MULTI L${2:qlength} *VAR \"${3:varName}\""],
+    "description": "MultiQuestion"
+  },
+  "QuestionOpen": {
+    "prefix": "QO",
+    "body": ["*QUESTION ${1:qNumber} *CODE L1 *VAR \"${2:varName}\"","1:   *OPEN"],
+    "description": "OpenQuestion"
+  },
+  "QuestionAlpha": {
+    "prefix": "QA",
+    "body": ["*QUESTION ${1:qNumber} *ALPHA L${2:qlength} *VAR \"${3:varName}\""],
+    "description": "AlphaQuestion"
+  },
+  "QuestionNumber": {
+    "prefix": "QN",
+    "body": ["*QUESTION ${1:qNumber} *NUMBER L${2:qlength} *MIN 1 *MAX 99 *VAR \"${3:varName}\""],
+    "description": "NumberQuestion"
+  },
+  "QuestionGrid": {
+    "prefix": "QG",
+    "body": ["*MATRIX ${1:qNumber} L${2:qlength}","Your text here","    ","*ENDMATRIX"],
+    "description": "GridQuestion"
+  },
+  "SubRouting": {
+    "prefix": "Sub",
+    "body": ["*SUBROUTINE \"${1:subName}\"",
+            "    ",
+            "*ENDSUB"],
+    "description": "Sub Routine"
+  },
+  "Repeat": {
+    "prefix": "RP",
+    "body": [
+      "*REPEAT ${1:count}",
+      "*IF [?R=1] *PUT",
+      "*ENDREP"
+    ],
+    "description": "Repeat Block"
+  },
+  "RandomOrder": {
+    "prefix": "RanOrder",
+    "body": [
+      "*VARS ${1:var},myorder[5]",
+      "*PUT ${1:var} [0]",
+      "*REPEAT ${2:count} *RANDOM",
+      "*PUT ${1:var} [${1:var}+1]",
+      "*IF [${1:var}=1] *PUT myorder[${1:var}] [?R]",
+      "*ENDREP"
+    ],
+    "description": "Random Order"
+  }
+}

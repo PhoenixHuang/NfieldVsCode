@@ -1,0 +1,48 @@
+{
+	"name": "nfieldodin",
+	"publisher": "PhoenixHuang",
+	"displayName": "Nfield Odin",
+	"description": "nfield plugin of phx",
+	"version": "1.5.1",
+	"engines": {
+		"vscode": "^1.35.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:nfieldodin"
+	],
+	"main": "./out/extension.js",
+	"contributes": {		
+		"languages": [{
+            "id": "nfieldodin",
+            "aliases": ["nfieldodin", "nfieldodin"],
+            "extensions": [".Q",".Odin"],
+            "configuration": "./nfieldodin-configuration.json"
+        }],
+        "grammars": [{
+            "language": "nfieldodin",
+            "scopeName": "source.nfieldodin",
+            "path": "./syntaxes/nfieldodin.tmLanguage.json"
+        }],
+        "snippets": [{
+              "language": "nfieldodin",
+              "path": "./snippets/nfieldodin.json"
+        }]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"tslint": "^5.12.1",
+		"@types/node": "^10.12.21",
+		"@types/mocha": "^2.2.42"
+	}
+}
