@@ -37,7 +37,7 @@
 		},
 		"functions": {
 			"patterns": [{
-				"match": "(STRFINDMATCH|STRHASMATCH|STRINDEX|STRLENGTH|STRLOWER|STRSUBSTR|STRTRIM|STRUPPER|TO)",
+				"match": "(STRFINDMATCH|STRHASMATCH|STRINDEX|STRLENGTH|STRLOWER|STRSUBSTR|STRTRIM|STRUPPER)",
 				"name": "constant.language.nfieldodin"
 			}]
 		},
